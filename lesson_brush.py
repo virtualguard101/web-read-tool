@@ -18,15 +18,15 @@ def main():
 
     # 预留网页开启时间
     print("You have 10s to open the lesson website\n")
-    # time.sleep(10)
-    time.sleep(3)
+    time.sleep(10)
+    # time.sleep(3)
 
     # 运行
     while (time.time() - start_time < run_time):
-        time.sleep(0.1)
+        time.sleep(5)
 
         pyautogui.scroll(-2)
-        time.sleep(0.1)
+        time.sleep(5)
         pyautogui.scroll(1)
 
     pyautogui.scroll(500)
