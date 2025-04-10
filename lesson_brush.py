@@ -49,7 +49,7 @@ def runtime_record():
     logging.info("End of this time")
 
     runtime = end_time - start_time
-    logging.info(f"Runtime of this time: {runtime/60:.2f} min")
+    logging.info(f"Runtime of this time: {(runtime-10)/60:.2f} min")
 
 
 if __name__ == "__main__":
