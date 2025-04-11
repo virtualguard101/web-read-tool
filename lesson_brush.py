@@ -45,7 +45,15 @@ def runtime_record():
     logging.info("Start working")
 
     # 运行功能主体
-    main(work_end, work_time)
+    try:
+        main(work_end, work_time)
+    except KeyboardInterrupt:
+        end_time = time.time()
+        runtime = end_time - start_time
+        logging.info("User interrupted")
+        logging.info(f"Current runtime is now at: {(runtime-10)/60:.2f} min")
+        logging.info("Proccess exit")
+        exit(0)
 
     end_time = time.time()
     logging.info("End of this time")
