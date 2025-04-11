@@ -5,14 +5,14 @@ import time
 import logging
 
 def get_runtime():
-    # 获取运行时长
+    '''获取运行时长'''
     run_time = int(input("How long do you want the script work:"))
     start_time = time.time()
     return [run_time, start_time]
 
 
 def main(start_time, run_time):
-    # 功能主体
+    '''功能主体'''
     # 预留网页开启时间
     print("You have 10s to open the lesson website\n")
     time.sleep(10)
@@ -29,7 +29,7 @@ def main(start_time, run_time):
     pyautogui.scroll(500)
 
 def runtime_record():
-    # 记录运行时间
+    '''记录运行时间'''
     logging.basicConfig(
         filename = 'runtime.log',
         level = logging.INFO,
