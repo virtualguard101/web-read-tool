@@ -11,17 +11,14 @@ def get_runtime():
     return [run_time, start_time]
 
 
-def main():
+def main(start_time, run_time):
     # 功能主体
-    runtime_res = get_runtime()
-    run_time, start_time = runtime_res[0], runtime_res[1]
-
     # 预留网页开启时间
     print("You have 10s to open the lesson website\n")
     time.sleep(10)
     # time.sleep(3)
 
-    # 运行
+    # 更新运行时间
     while (time.time() - start_time < run_time):
         time.sleep(5)
 
@@ -40,10 +37,15 @@ def runtime_record():
         datefmt = '%Y-%m-%d %H:%M:%S'
     )
 
+    # 获取运行时长与时间戳
+    runtime_res = get_runtime()
+    work_time, work_end = runtime_res[0], runtime_res[1]
+ 
     start_time = time.time()
     logging.info("Start working")
 
-    main()
+    # 运行功能主体
+    main(work_end, work_time)
 
     end_time = time.time()
     logging.info("End of this time")

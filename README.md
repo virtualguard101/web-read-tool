@@ -38,6 +38,12 @@ pip install -r requirements.txt
 python lesson_brush.py
 ```
 
+由于添加了`shebang`，使用liunx的同志也可以在给脚本添加权限后直接执行：
+```bash
+chmod +x lesson_brush.py
+./lesson_brush.py
+```
+
 按照终端提示输入想要运行的时长，随后快速切回阅读界面，看着界面自己来回滚动即可，觉得无聊，也可以把电脑晾在一旁做自己的事
 
 想要终止运行，按下`super`+`D`切到桌面后唤出终端`ctrl`+`C`即可
