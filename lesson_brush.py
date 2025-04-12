@@ -6,7 +6,7 @@ import logging
 
 def get_runtime():
     '''获取运行时长'''
-    run_time = int(input("How long do you want the script work:"))
+    run_time = int(input("How long do you want the script work(min):")) * 60
     start_time = time.time()
     return [run_time, start_time]
 
@@ -20,10 +20,10 @@ def main(start_time, run_time):
 
     # 更新运行时间
     while (time.time() - start_time < run_time):
-        time.sleep(5)
+        time.sleep(10)
 
         pyautogui.scroll(-2)
-        time.sleep(5)
+        time.sleep(10)
         pyautogui.scroll(1)
 
     pyautogui.scroll(500)
