@@ -28,7 +28,7 @@ def main(start_time, run_time):
 
     pyautogui.scroll(500)
 
-def runtime_record():
+def runtime():
     '''记录运行时间'''
     logging.basicConfig(
         filename = 'runtime.log',
@@ -43,6 +43,7 @@ def runtime_record():
  
     start_time = time.time()
     logging.info("Start working")
+    print("- Start working")
 
     # 运行功能主体
     try:
@@ -53,6 +54,9 @@ def runtime_record():
         logging.info("User interrupted")
         logging.info(f"Current runtime is now at: {(runtime-10)/60:.2f} min")
         logging.info("Proccess exit")
+        print("- User interrupted")
+        print(f"- Current runtime is now at: {(runtime-10)/60:.2f} min")
+        print("- Proccess exit")
         exit(0)
 
     end_time = time.time()
@@ -60,7 +64,8 @@ def runtime_record():
 
     runtime = end_time - start_time
     logging.info(f"Runtime of this time: {(runtime-10)/60:.2f} min")
+    print(f"- Runtime of this time: {(runtime-10)/60:.2f} min")
 
 
 if __name__ == "__main__":
-    runtime_record()
+    runtime()
