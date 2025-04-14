@@ -36,6 +36,15 @@ def runtime():
         format = '%(asctime)s - %(levelname)s - %(message)s',
         datefmt = '%Y-%m-%d %H:%M:%S'
     )
+    # 获取根日志器
+    logger = logging.getLogger()
+    
+    # 创建一个 StreamHandler，用于将日志输出到终端
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S'))
+
+    logger.addHandler(console_handler)
 
     # 获取运行时长与时间戳
     runtime_res = get_runtime()
@@ -43,7 +52,6 @@ def runtime():
  
     start_time = time.time()
     logging.info("Start working")
-    print("- Start working")
 
     # 运行功能主体
     try:
@@ -54,9 +62,6 @@ def runtime():
         logging.info("User interrupted")
         logging.info(f"Current runtime is now at: {(runtime-10)/60:.2f} min")
         logging.info("Proccess exit")
-        print("- User interrupted")
-        print(f"- Current runtime is now at: {(runtime-10)/60:.2f} min")
-        print("- Proccess exit")
         exit(0)
 
     end_time = time.time()
@@ -64,7 +69,6 @@ def runtime():
 
     runtime = end_time - start_time
     logging.info(f"Runtime of this time: {(runtime-10)/60:.2f} min")
-    print(f"- Runtime of this time: {(runtime-10)/60:.2f} min")
 
 
 if __name__ == "__main__":
