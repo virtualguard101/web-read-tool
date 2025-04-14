@@ -23,6 +23,8 @@ def main(start_time, run_time):
         time.sleep(10)
 
         pyautogui.scroll(-2)
+        time.sleep(5)
+        pyautogui.click(2057, 1901)
         time.sleep(10)
         pyautogui.scroll(1)
 
